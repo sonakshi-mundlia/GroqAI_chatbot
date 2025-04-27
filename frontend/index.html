@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Groq AI Chatbot</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <header class="main-header">
+        <span class="header-icon" title="Chat">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="2" width="20" height="20" rx="4" fill="#fff"/>
+            <rect x="2" y="2" width="20" height="20" rx="4" stroke="#1976d2" stroke-width="2"/>
+            <path d="M7 10h10M7 14h6" stroke="#1976d2" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="header-title">SoChat</span>
+        <span class="menu-bar-icon menu-open" title="Menu"><i class="fas fa-bars"></i></span>
+        <span class="menu-bar-icon menu-close" title="Close" style="display:none;"><i class="fas fa-times"></i></span>
+    </header>
+    <nav id="sidebar" class="sidebar">
+      <div class="sidebar-content">
+        <div class="sidebar-logo">SoChat</div>
+        <ul class="sidebar-list">
+          <li><a href="#" class="sidebar-link">New Chat</a></li>
+          <li><a href="#" class="sidebar-link">SoChat</a></li>
+          <li><a href="#" class="sidebar-link">API Platform</a></li>
+          <li><a href="#" class="sidebar-link">For Business</a></li>
+          <li><a href="#" class="sidebar-link">LLM Models</a></li>
+          <li><button class="sidebar-btn"><a href="#" class="sidebar-link">Sign In</a></button></li>
+
+        </ul>
+       
+      </div>
+    </nav>
+    <main class="home-main">
+      <section class="home-info">
+        <h1 class="home-title">Welcome to SoChat AI</h1>
+        <p class="home-desc">Your intelligent assistant for instant answers, creative ideas, and seamless conversation.</p>
+        <button class="try-now-btn">Try Now</button>
+        <p class="home-site-desc">SoChat AI is your smart conversational partner, designed to answer questions, brainstorm ideas, and assist with everyday tasks using advanced AI technology. Enjoy seamless, secure, and user-friendly chat experiences—anytime, anywhere.</p>
+        <h2 class="examples-heading">Example Uses</h2>
+        <div class="examples-container">
+          <div class="example-pair">
+            <div class="example-user">User: <span>What's the weather in Paris?</span></div>
+            <div class="example-ai">SoChat AI: <span>The weather in Paris is currently 18°C, partly cloudy.</span></div>
+            <div class="example-pair">
+            <div class="example-user">User: <span>Can you fix this Java code?</span><br>
+              <pre><code>public class HelloWorld {
+    public static void main(String[] args) {
+        for(int i = 0; i < 5; i++)
+            System.out.println("Hello, World!"
+        }
+        System.out.println("Done");
+    }
+}
+</code></pre>
+            </div>
+            <div class="example-ai">SoChat AI: <span>Your Java code has a missing parenthesis and a misplaced curly brace. Here’s the corrected version:</span><br>
+              <pre><code>public class HelloWorld {
+    public static void main(String[] args) {
+        for(int i = 0; i < 5; i++) {
+            System.out.println("Hello, World!");
+        }
+        System.out.println("Done");
+    }
+}
+</code></pre>
+            </div>
+          </div>
+          <div class="example-pair">
+            <div class="example-user">User: <span>Can you fix this C++ code?</span><br>
+              <pre><code>#include &lt;iostream&gt;
+using namespace std;
+int main() {
+    for(int i = 0; i < 5; i++)
+        cout << "Hello, World!" << endl
+    cout << "Done!" << endl;
+    return 0;
+}
+</code></pre>
+            </div>
+            <div class="example-ai">SoChat AI: <span>Your C++ code is missing semicolons. Here’s the corrected version:</span><br>
+              <pre><code>#include &lt;iostream&gt;
+using namespace std;
+int main() {
+    for(int i = 0; i < 5; i++) {
+        cout << "Hello, World!" << endl;
+    }
+    cout << "Done!" << endl;
+    return 0;
+}
+</code></pre>
+            </div>
+          </div>
+         </div>
+    </main>
+    <div id="sidebar-overlay" class="sidebar-overlay"></div>
+    <section id="try-now-page" style="display:none; margin-top:3rem; position:relative;">
+
+      <!-- Try Now content will be injected here -->
+    </section>
+    <section id="sochat-info-page" style="display:none; min-height:80vh; padding:3rem 0;">
+      <h1 class="sochat-info-title" style="color:#111; text-align:center; font-size:2.2rem; font-weight:700; margin-bottom:1.2rem;">About SoChat</h1>
+      <p class="sochat-info-desc" style="font-size:1.18rem; color:#444; margin-bottom:2.2rem; text-align:center;">SoChat is your intelligent conversational AI assistant designed to help you with instant answers, creative ideas, code debugging, and more. Enjoy seamless, secure, and user-friendly chat experiences—anytime, anywhere.</p>
+      <h2 class="sochat-features-heading" style="font-size:1.3rem; font-weight:600; margin-bottom:0.8rem;">Key Features:</h2>
+      <ul class="sochat-features-list" style="margin-bottom:2.2rem; padding-left:1.5rem; color:#222; font-size:1.08rem;">
+        <li>Natural language chat with instant AI responses</li>
+        <li>Code error detection and correction for Python, Java, C++, and more</li>
+        <li>Creative writing, brainstorming, and Q&A support</li>
+        <li>Business and productivity tools</li>
+        <li>Modern, intuitive interface with copy/share options</li>
+        <li>Secure and privacy-focused conversations</li>
+      </ul>
+      <h2 class="sochat-info-heading" style="font-size:1.18rem; font-weight:600; margin-top:2.2rem; margin-bottom:0.7rem;">How to Use:</h2>
+      <ol class="sochat-info-steps" style="margin-bottom:2.2rem; padding-left:1.5rem; color:#222; font-size:1.07rem;">
+        <li>Start a new chat from the home or sidebar</li>
+        <li>Type your question, code, or request</li>
+        <li>Get instant, helpful replies from SoChat</li>
+        <li>Copy answers or code with one click</li>
+      </ol>
+      <p class="sochat-info-footer" style="margin-top:2.2rem; font-size:1.02rem; color:#888; text-align:center;">SoChat is powered by advanced AI models and is always improving to better assist you!</p>
+    </section>
+    <section id="api-platform-page" style="display:none; min-height:80vh; padding:3rem 0;">
+      <div class="sochat-info-container">
+        <h1 class="sochat-info-title" style="color:#1976d2; text-align:center; font-size:2.2rem; font-weight:700; margin-bottom:1.2rem;">API Platform</h1>
+        <p class="sochat-info-desc" style="font-size:1.17rem; color:#333; margin-bottom:2.2rem; text-align:center;">Integrate SoChat AI into your own apps, products, or workflows with our robust and secure API platform. Unlock powerful language capabilities for your business, tools, or research projects.</p>
+        <h2 class="sochat-features-heading" style="font-size:1.22rem; font-weight:600; margin-bottom:0.8rem; color:#1976d2;">Key Features</h2>
+        <ul class="sochat-features-list" style="margin-bottom:2.2rem; padding-left:1.5rem; color:#222; font-size:1.08rem;">
+          <li>RESTful API endpoints for chat, completion, and more</li>
+          <li>Secure authentication with API keys</li>
+          <li>Groq AI integration for ultra-fast, scalable language processing</li>
+          <li>Easy integration with Python, JavaScript, and other languages</li>
+          <li>Comprehensive documentation and usage examples</li>
+        </ul>
+        <h2 class="sochat-info-heading" style="font-size:1.17rem; font-weight:600; margin-top:2.2rem; margin-bottom:0.7rem; color:#1976d2;">How to Use the API Platform</h2>
+        <ol class="sochat-info-steps" style="margin-bottom:2.2rem; padding-left:1.5rem; color:#222; font-size:1.07rem;">
+          <li>Sign up or log in to your Groq account</li>
+          <li>Visit the <a href="https://console.groq.com/keys" target="_blank" style="color:#1976d2; text-decoration:underline;">Groq API Key Platform</a> to generate your API key</li>
+          <li>Read the API documentation for endpoint details and code samples</li>
+          <li>Integrate the API into your application using your Groq API key</li>
+          <li>Start making requests and build amazing AI-powered features!</li>
+        </ol>
+        <h2 class="sochat-info-heading" style="font-size:1.17rem; font-weight:600; margin-top:2.2rem; margin-bottom:0.7rem; color:#1976d2;">Groq AI Integration</h2>
+        <p style="font-size:1.07rem; color:#444; margin-bottom:1.2rem;">Our API platform leverages Groq's cutting-edge language models for blazing-fast response times and high scalability. Perfect for chatbots, assistants, content generation, and more.</p>
+        <a id="groq-api-key-link" href="https://console.groq.com/keys" target="_blank" class="sidebar-btn" style="margin: 2rem auto 0 auto; display: block; text-align: center;">Get your Groq API Key</a>
+        <p style="margin-top:2.2rem; font-size:1.01rem; color:#b71c1c; background:#fbe9e7; border-radius:1rem; padding:1rem 1.5rem; text-align:center; max-width:540px; margin-left:auto; margin-right:auto;">Never share your Groq API key publicly. Keep it secure to protect your account and usage limits.</p>
+      </div>
+    </section>
+    <section id="business-page" style="display:none; min-height:80vh; padding:3rem 0; text-align:left;">
+      <h1 style="color:#1976d2; font-size:2.2rem; font-weight:700; margin-bottom:1.2rem; text-align:center;">Why SoChat is Important for Businesses</h1>
+      <p style="font-size:1.18rem; color:#333; margin-bottom:1.5rem;">SoChat empowers businesses to streamline customer support, automate repetitive queries, and provide instant, accurate information 24/7. By leveraging advanced AI, companies can reduce operational costs and boost customer satisfaction.</p>
+      <p style="font-size:1.12rem; color:#222; margin-bottom:1.2rem;">With SoChat, businesses can:</p>
+      <ul style="font-size:1.12rem; color:#222; margin-bottom:1.2rem;">
+        <li>Deliver fast, automated responses to customer inquiries</li>
+        <li>Scale support without increasing headcount</li>
+        <li>Integrate AI-powered chat into websites and apps</li>
+        <li>Gain insights from customer conversations</li>
+        <li>Enhance user engagement and brand loyalty</li>
+      </ul>
+      <p style="font-size:1.12rem; color:#222;">SoChat is secure, reliable, and easy to integrate, making it the perfect solution for modern businesses seeking a competitive edge.</p>
+    </section>
+    <section id="models-page" style="display:none; min-height:80vh; padding:3rem 0;">
+      <h1 style="color:#1976d2; font-size:2.2rem; font-weight:700; margin-bottom:1.2rem; text-align:center;">Another Large Language Models</h1>
+      <div style="display:flex; flex-wrap:wrap; gap:2rem; justify-content:center;">
+        <div style="background:#f5f5f5; border-radius:1rem; padding:2rem; min-width:220px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.05);">
+          <h2 style="color:#1976d2; font-size:1.3rem; margin-bottom:0.7rem;">Groq Llama-2</h2>
+          <p style="font-size:1.08rem; color:#222; margin-bottom:1rem;">Fast, scalable Llama-2 model hosted by Groq.</p>
+          
+        </div>
+        <div style="background:#f5f5f5; border-radius:1rem; padding:2rem; min-width:220px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.05);">
+          <h2 style="color:#1976d2; font-size:1.3rem; margin-bottom:0.7rem;">OpenAI GPT-3.5</h2>
+          <p style="font-size:1.08rem; color:#222; margin-bottom:1rem;">Reliable and widely used conversational model.</p>
+          
+        </div>
+        <div style="background:#f5f5f5; border-radius:1rem; padding:2rem; min-width:220px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.05);">
+          <h2 style="color:#1976d2; font-size:1.3rem; margin-bottom:0.7rem;">OpenAI GPT-4</h2>
+          <p style="font-size:1.08rem; color:#222; margin-bottom:1rem;">State-of-the-art model for advanced tasks.</p>
+          
+        </div>
+      </div>
+    </section>
+    <section id="llm-chat-page" style="display:none; min-height:80vh; padding:0; position:relative;">
+  <div class="llm-chat-header" style="padding:2rem 2rem 1rem 2rem; display:flex; align-items:center; justify-content:space-between; gap:2rem;">
+    <span class="llm-chat-title" style="font-size:2rem; font-weight:700; color:#1976d2; flex:1; text-align:left;">SoChat</span>
+    <div style="flex:1; display:flex; gap:2rem; justify-content:flex-end;">
+
+      <button id="llm-logout-btn" style="padding:0.6rem 1.4rem; font-size:1.05rem; border-radius:2rem; border:1px solid #b71c1c; background:#fff; color:#b71c1c; cursor:pointer; font-weight:600;">Log Out</button>
+    </div>
+  </div>
+  <div id="llm-chat-messages" style="max-width:700px; margin:0 auto; padding-bottom:7rem;"></div>
+  <div style="width:100%; display:flex; justify-content:center; align-items:center; margin-bottom:2rem; margin-top:2rem;">
+    <input id="llm-chat-input" type="text" placeholder="Type your message..." style="width:60vw; max-width:500px; padding:0.8rem 1rem; font-size:1.1rem; border-radius:2rem; border:1px solid #ccc; margin-right:0.5rem;">
+    <button id="llm-chat-send" style="padding:0.8rem 2rem; font-size:1.1rem; border-radius:2rem; background:#1976d2; color:#fff; border:none;">Send</button>
+  </div>
+
+  <div id="llm-chat-messages" style="max-width:700px; margin:0 auto; padding-bottom:7rem; display:none;"></div>
+</section>
+    <section id="signup-page" style="display:none; min-height:80vh; padding:3rem 0;">
+      <h1 id="signup-login-heading" style="color:#1976d2; font-size:2.2rem; font-weight:700; margin-bottom:1.2rem; text-align:center;">Login</h1>
+      <div style="max-width:400px; margin:0 auto; background:#f5f5f5; border-radius:1rem; padding:2rem; box-shadow:0 2px 8px rgba(0,0,0,0.05);">
+        <form id="login-form" style="display:flex; flex-direction:column; gap:1.2rem;">
+          <input type="email" id="login-email" placeholder="Email" required style="padding:0.8rem 1rem; font-size:1.1rem; border-radius:2rem; border:1px solid #ccc;">
+          <input type="password" id="login-password" placeholder="Password" required style="padding:0.8rem 1rem; font-size:1.1rem; border-radius:2rem; border:1px solid #ccc;">
+          <button type="submit" id="login-btn" style="padding:0.8rem 2rem; font-size:1.1rem; border-radius:2rem; background:#1976d2; color:#fff; border:none;">Login</button>
+          <div id="login-to-signup" style="margin-top:1.2rem; text-align:center; font-size:1.03rem;">Don't have an account? <a href="#" id="show-signup-form">Sign Up</a></div>
+        </form>
+        <form id="signup-form" style="display:none; flex-direction:column; gap:1.2rem;">
+          <input type="email" id="signup-email" placeholder="Email" required style="padding:0.8rem 1rem; font-size:1.1rem; border-radius:2rem; border:1px solid #ccc;">
+          <input type="password" id="signup-password" placeholder="Password" required style="padding:0.8rem 1rem; font-size:1.1rem; border-radius:2rem; border:1px solid #ccc;">
+          <input type="password" id="signup-confirm-password" placeholder="Confirm Password" required style="padding:0.8rem 1rem; font-size:1.1rem; border-radius:2rem; border:1px solid #ccc;">
+          <button type="submit" id="signup-btn" style="padding:0.8rem 2rem; font-size:1.1rem; border-radius:2rem; background:#1976d2; color:#fff; border:none;">Register</button>
+          <div id="signup-to-login" style="margin-top:1.2rem; text-align:center; font-size:1.03rem;">Already have an account? <a href="#" id="show-login-form">Login</a></div>
+        </form>
+
+      </div>
+    </section>
+      <div id="try-messages" style="padding:2rem 0 8rem 0; max-width:700px; margin:0 auto;"></div>
+      <div id="try-searchbar-container" style="position:fixed; bottom:0; left:0; width:100vw; background:#fff; box-shadow:0 -2px 8px rgba(0,0,0,0.05); padding:1.5rem 0; display:none; justify-content:center;">
+        <input id="try-searchbar" type="text" placeholder="Type your message..." style="width:60vw; max-width:500px; padding:0.8rem 1rem; font-size:1.1rem; border-radius:2rem; border:1px solid #ccc; margin-right:0.5rem;">
+        <button id="try-search-btn" style="padding:0.8rem 2rem; font-size:1.1rem; border-radius:2rem; background:#1976d2; color:#fff; border:none;">Send</button>
+      </div>
+    </section>
+    <footer class="main-footer" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:16px 0;">
+  <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;justify-content:center;">
+    <span class="footer-text">&copy; 2025 SoChat AI</span>
+    <a href="#" class="footer-link" id="terms-link">Terms</a>
+    <a href="#" class="footer-link" id="policies-link">Policies</a>
+    <span class="footer-social" style="display:flex;gap:12px;align-items:center;">
+      <a href="#" class="footer-social-icon" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" class="footer-social-icon" title="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="#" class="footer-social-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" class="footer-social-icon" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="#" class="footer-social-icon" title="GitHub"><i class="fab fa-github"></i></a>
+    </span>
+  </div>
+  <div class="footer-email" style="margin-top:8px;">
+    <a href="mailto:contact@sochat.com" class="footer-email-link"><i class="fas fa-envelope"></i> contact@sochat.com</a>
+  </div>
+</footer>
+    <div id="terms-dropdown" style="display:none; position:fixed; bottom:50px; left:0; right:0; margin:auto; max-width:600px; background:#fff; border:1px solid #ddd; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.08); padding:24px; z-index:9999;">
+      <h3 style="margin-top:0;">Terms of Service</h3>
+      <ul style="padding-left:20px;">
+        <li><strong>Use of Service:</strong> SoChat AI is for personal, non-commercial use only. Do not use the service for illegal or harmful activities.</li>
+        <li><strong>Privacy:</strong> We respect your privacy. Please do not share sensitive personal information in chats.</li>
+        <li><strong>Content:</strong> You are responsible for the content you share. Do not submit offensive, harmful, or illegal content.</li>
+        <li><strong>AI Limitations:</strong> The chatbot provides responses using AI and may not always be accurate. Use discretion when acting on advice.</li>
+        <li><strong>Changes:</strong> We may update these terms from time to time. Continued use of the service means acceptance of the new terms.</li>
+      </ul>
+      <button id="close-terms-btn" style="margin-top:16px; padding:6px 18px; background:#1976d2; color:#fff; border:none; border-radius:4px; cursor:pointer;">Close</button>
+    </div>
+    <div id="policies-dropdown" style="display:none; position:fixed; bottom:50px; left:0; right:0; margin:auto; max-width:600px; background:#fff; border:1px solid #ddd; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.08); padding:24px; z-index:9999;">
+      <h3 style="margin-top:0;">Website Policies</h3>
+      <ul style="padding-left:20px;">
+        <li><strong>Privacy Policy:</strong> We do not store or share your personal data. Conversations are not used for marketing or sold to third parties.</li>
+        <li><strong>Data Use:</strong> Chat history is stored locally in your browser for your convenience. We do not collect or analyze your data.</li>
+        <li><strong>Cookies:</strong> We use cookies only for session management and improving your experience. No tracking cookies are used.</li>
+        <li><strong>Security:</strong> We use industry-standard security measures to protect your information and our systems.</li>
+        <li><strong>Contact:</strong> For questions or concerns, email us at <a href="mailto:contact@sochat.com">contact@sochat.com</a>.</li>
+      </ul>
+      <button id="close-policies-btn" style="margin-top:16px; padding:6px 18px; background:#1976d2; color:#fff; border:none; border-radius:4px; cursor:pointer;">Close</button>
+    </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const termsLink = document.getElementById('terms-link');
+        const termsDropdown = document.getElementById('terms-dropdown');
+        const closeTermsBtn = document.getElementById('close-terms-btn');
+        const policiesLink = document.getElementById('policies-link');
+        const policiesDropdown = document.getElementById('policies-dropdown');
+        const closePoliciesBtn = document.getElementById('close-policies-btn');
+        if (termsLink && termsDropdown) {
+          termsLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            termsDropdown.style.display = termsDropdown.style.display === 'none' ? 'block' : 'none';
+            if (policiesDropdown) policiesDropdown.style.display = 'none';
+          });
+        }
+        if (closeTermsBtn && termsDropdown) {
+          closeTermsBtn.addEventListener('click', function() {
+            termsDropdown.style.display = 'none';
+          });
+        }
+        if (policiesLink && policiesDropdown) {
+          policiesLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            policiesDropdown.style.display = policiesDropdown.style.display === 'none' ? 'block' : 'none';
+            if (termsDropdown) termsDropdown.style.display = 'none';
+          });
+        }
+        if (closePoliciesBtn && policiesDropdown) {
+          closePoliciesBtn.addEventListener('click', function() {
+            policiesDropdown.style.display = 'none';
+          });
+        }
+      });
+    </script>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
